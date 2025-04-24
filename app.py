@@ -81,7 +81,7 @@ with col1:
     time_label = st.selectbox("开播时间:", options=list(time_options.keys()), format_func=lambda x: f"{time_options[x]} ({x})")
     exclusive_label = st.selectbox("是否独家:", options=list(exclusive_options.keys()), format_func=lambda x: f"{exclusive_options[x]} ({x})")
     origin_label = st.selectbox("产地:", options=list(origin_options.keys()), format_func=lambda x: f"{origin_options[x]} ({x})")
-    episodes = st.number_input("集数:", min_value=1, value=0, step=1) # 数值型：集数
+    episodes = st.number_input("集数:", min_value=1, value=1, step=1) # 数值型：集数
 
 with col2:
     # --- 数值特征输入 (使用数字输入框 Number Input) ---
