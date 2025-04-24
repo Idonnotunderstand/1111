@@ -93,15 +93,15 @@ with col2:
 st.sidebar.subheader("📝 主题模型权重 (Topic Weights)") # 主题权重的小标题
 topic_cols = st.sidebar.columns(5) # 为5个Topic权重创建5列
 with topic_cols[0]:
-    topic0 = st.number_input("Topic 0:", min_value=0.0, max_value=1.0, value=0.41, step=0.01, format="%.2f")
+    topic0 = st.number_input("Topic 0:", min_value=0.0, max_value=1.0, value=0, step=0.01, format="%.2f")
 with topic_cols[1]:
-    topic1 = st.number_input("Topic 1:", min_value=0.0, max_value=1.0, value=0.14, step=0.01, format="%.2f")
+    topic1 = st.number_input("Topic 1:", min_value=0.0, max_value=1.0, value=0, step=0.01, format="%.2f")
 with topic_cols[2]:
-    topic2 = st.number_input("Topic 2:", min_value=0.0, max_value=1.0, value=0.11, step=0.01, format="%.2f")
+    topic2 = st.number_input("Topic 2:", min_value=0.0, max_value=1.0, value=0, step=0.01, format="%.2f")
 with topic_cols[3]:
-    topic3 = st.number_input("Topic 3:", min_value=0.0, max_value=1.0, value=0.21, step=0.01, format="%.2f")
+    topic3 = st.number_input("Topic 3:", min_value=0.0, max_value=1.0, value=0, step=0.01, format="%.2f")
 with topic_cols[4]:
-    topic4 = st.number_input("Topic 4:", min_value=0.0, max_value=1.0, value=0.12, step=0.01, format="%.2f")
+    topic4 = st.number_input("Topic 4:", min_value=0.0, max_value=1.0, value=0, step=0.01, format="%.2f")
 
 # 检查Topic权重和是否接近1 (可选，给用户提示)
 topic_sum = topic0 + topic1 + topic2 + topic3 + topic4
