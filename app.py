@@ -85,10 +85,10 @@ with col1:
 
 with col2:
     # --- 数值特征输入 (使用数字输入框 Number Input) ---
-    likes = st.number_input("点赞数(PV):", min_value=0, value=0, step=1000)
-    coins = st.number_input("投币数(PV):", min_value=0, value=0, step=1000)
-    favorites = st.number_input("收藏数(PV):", min_value=0, value=0, step=1000)
-    shares = st.number_input("分享数(PV):", min_value=0, value=0, step=1000)
+    likes = st.number_input("点赞数(第一集):", min_value=0, value=0, step=1000)
+    coins = st.number_input("投币数(第一集):", min_value=0, value=0, step=1000)
+    favorites = st.number_input("收藏数(第一集):", min_value=0, value=0, step=1000)
+    shares = st.number_input("分享数(第一集):", min_value=0, value=0, step=1000)
 
 st.sidebar.subheader("📝 主题模型权重 (Topic Weights)") # 主题权重的小标题
 topic_cols = st.sidebar.columns(5) # 为5个Topic权重创建5列
@@ -119,10 +119,10 @@ if st.sidebar.button("🚀 预测总播放量", type="primary"): # 添加预测�
             '是否独家': exclusive_label,
             '产地': origin_label,
             '集数': episodes,
-            '点赞数（PV）': likes,
-            '投币数（PV）': coins,
-            '收藏数（PV）': favorites,
-            '分享数（PV）': shares,
+            '点赞数（第一集）': likes,
+            '投币数（第一集）': coins,
+            '收藏数（第一集）': favorites,
+            '分享数（第一集）': shares,
             'Topic 0': topic0,
             'Topic 1': topic1,
             'Topic 2': topic2,
@@ -132,8 +132,8 @@ if st.sidebar.button("🚀 预测总播放量", type="primary"): # 添加预测�
 
         # 2. 转换为DataFrame，并确保特征顺序正确
         input_df = pd.DataFrame([input_data])
-        required_features = ['类型','是否改编','开播时间','是否独家','产地','集数','点赞数（PV）',
-                           '投币数（PV）','收藏数（PV）','分享数（PV）','Topic 0','Topic 1',
+        required_features = ['类型','是否改编','开播时间','是否独家','产地','集数','点赞数（第一集）',
+                           '投币数（第一集）','收藏数（第一集）','分享数（第一集）','Topic 0','Topic 1',
                            'Topic 2','Topic 3','Topic 4'] # 模型训练时的特征顺序
         try:
             input_df = input_df[required_features] # 按照训练时的顺序排列特征
